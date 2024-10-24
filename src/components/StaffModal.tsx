@@ -84,11 +84,12 @@ const StaffModal: React.FC<StaffModalProps> = ({ isOpen, onClose, onSubmit, staf
               className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
               required
             >
-              <option value="">Select Role</option>
+              <option value=""></option>
               <option value="Doctor">Doctor</option>
               <option value="Midwife">Midwife</option>
               <option value="Nurse">Nurse</option>
-              <option value="labtech">LabTech</option>
+              <option value="Labtech">LabTech</option>
+              <option value="Imaging">Imaging</option>
               <option value="Cashier">Cashier</option>
               <option value="Admin">Admin</option>
             </select>
@@ -127,7 +128,7 @@ const StaffModal: React.FC<StaffModalProps> = ({ isOpen, onClose, onSubmit, staf
               className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
               required
             >
-              <option value="">Select Employment Type</option>
+              <option value=""></option>
               <option value="Full-time">Full-time</option>
               <option value="Part-time">Part-time</option>
               <option value="Contract">Contract</option>

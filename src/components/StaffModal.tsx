@@ -86,9 +86,11 @@ const StaffModal: React.FC<StaffModalProps> = ({ isOpen, onClose, onSubmit, staf
             >
               <option value="">Select Role</option>
               <option value="Doctor">Doctor</option>
+              <option value="Midwife">Midwife</option>
               <option value="Nurse">Nurse</option>
-              <option value="Admin">Admin</option>
+              <option value="labtech">LabTech</option>
               <option value="Cashier">Cashier</option>
+              <option value="Admin">Admin</option>
             </select>
           </div>
           <div className="mb-4">

@@ -122,7 +122,7 @@ const ResultsReviewModal: React.FC<ResultsReviewModalProps> = ({ isOpen, onClose
               className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
               required
             >
-              <option value="">Select Status</option>
+              <option value=""></option>
               <option value="Approved">Approved</option>
               <option value="Needs Further Review">Needs Further Review</option>
               <option value="Rejected">Rejected</option>

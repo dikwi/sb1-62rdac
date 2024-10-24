@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Registration Form</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            line-height: 1.4;
+            margin: 0;
+            padding: 20mm;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 10mm;
+        }
+        .logo {
+            max-width: 100px;
+            height: auto;
+        }
+        h1 {
+            font-size: 18px;
+            margin: 5mm 0;
+        }
+        .form-section {
+            margin-bottom: 10mm;
+        }
+        .form-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 2mm;
+        }
+        .form-group {
+            flex: 1;
+            margin-right: 5mm;
+        }
+        .form-group:last-child {
+            margin-right: 0;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 1mm;
+        }
+        input[type="text"],
+        input[type="date"],
+        input[type="tel"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 2mm;
+            border: 1px solid #ccc;
+            border-radius: 2mm;
+        }
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .checkbox-item {
+            width: 50%;
+            margin-bottom: 1mm;
+        }
+        .signature-box {
+            border: 1px solid #ccc;
+            height: 20mm;
+            margin-top: 2mm;
+        }
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="https://via.placeholder.com/100x100.png?text=Clinic+Logo" alt="Clinic Logo" class="logo">
+        <h1>Dr. DADA Clinic</h1>
+        <p>123 Medical Street, Health City, HC 12345<br>
+        Phone: (123) 456-7890 | Website: www.drdadaclinic.com</p>
+        <h1>Patient Registration Form</h1>
+        <p>Form ID: REG-<?php echo date('YmdHis'); ?> | Date: <?php echo date('d/m/Y H:i'); ?></p>
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=REG-<?php echo date('YmdHis'); ?>" alt="QR Code">
+    </div>
+
+    <form>
+        <div class="form-section">
+            <h2>Patient Information</h2>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="fullName">Full Name:</label>
+                    <input type="text" id="fullName" name="fullName" required>
+                </div>
+                <div class="form-group">
+                    <label>Gender:</label>
+                    <div>
+                        <label><input type="radio" name="gender" value="male"> Male</label>
+                        <label><input type="radio" name="gender" value="female"> Female</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dob" name="dob" required>
+                </div>
+                <div class="form-group">
+                    <label for="age">Age:</label>
+                    <input type="text" id="age" name="age">
+                </div>
+                <div class="form-group">
+                    <label for="maritalStatus">Marital Status:</label>
+                    <select id="maritalStatus" name="maritalStatus">
+                        <option value="">Select</option>
+                        <option value="single">Single</option>
+                        <option value="married">Married</option>
+                        <option value="divorced">Divorced</option>
+                        <option value="widowed">Widowed</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="nationality">Nationality:</label>
+                    <input type="text" id="nationality" name="nationality">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="address">Home Address:</label>
+                <textarea id="address" name="address" rows="2"></textarea>
+            </div>
+            <h3>Emergency Contact</h3>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="emergencyName">Name:</label>
+                    <input type="text" id="emergencyName" name="emergencyName">
+                </div>
+                <div class="form-group">
+                    <label for="emergencyRelationship">Relationship:</label>
+                    <input type="text" id="emergencyRelationship" name="emergencyRelationship">
+                </div>
+                <div class="form-group">
+                    <label for="emergencyPhone">Phone Number:</label>
+                    <input type="tel" id="emergencyPhone" name="emergencyPhone">
+                </div>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <h2>Insurance Information</h2>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="insuranceProvider">Insurance Provider:</label>
+                    <input type="text" id="insuranceProvider" name="insuranceProvider">
+                </div>
+                <div class="form-group">
+                    <label for="policyNumber">Policy Number:</label>
+                    <input type="text" id="policyNumber" name="policyNumber">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="coverageType">Coverage Type:</label>
+                    <select id="coverageType" name="coverageType">
+                        <option value="">Select</option>
+                        <option value="nssf">Social Security (NSSF)</option>
+                        <option value="private">Private Insurance</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="insuranceContact">Insurance Contact Number:</label>
+                    <input type="tel" id="insuranceContact" name="insuranceContact">
+                </div>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <h2>Medical History</h2>
+            <div class="form-group">
+                <label for="primaryPhysician">Primary Physician:</label>
+                <input type="text" id="primaryPhysician" name="primaryPhysician">
+            </div>
+            <div class="form-group">
+                <label>Previous Medical Conditions:</label>
+                <div class="checkbox-group">
+                    <div class="checkbox-item"><label><input type="checkbox" name="conditions[]" value="diabetes"> Diabetes</label></div>
+                    <div class="checkbox-item"><label><input type="checkbox" name="conditions[]" value="hypertension"> Hypertension</label></div>
+                    <div class="checkbox-item"><label><input type="checkbox" name="conditions[]" value="asthma"> Asthma</label></div>
+                    <div class="checkbox-item"><label><input type="checkbox" name="conditions[]" value="heartDisease"> Heart Disease</label></div>
+                    <div class="checkbox-item"><label><input type="checkbox" name="conditions[]" value="cancer"> Cancer</label></div>
+                    <div class="checkbox-item"><label><input type="checkbox" name="conditions[]" value="other"> Other</label></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="currentMedications">Current Medications:</label>
+                <textarea id="currentMedications" name="currentMedications" rows="3" placeholder="List medications, dosage, and frequency"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="allergies">Allergies:</label>
+                <textarea id="allergies" name="allergies" rows="2" placeholder="Medications, foods, substances"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="surgicalHistory">Surgical History:</label>
+                <textarea id="surgicalHistory" name="surgicalHistory" rows="2" placeholder="Details of past surgeries"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="familyHistory">Family Medical History:</label>
+                <textarea id="familyHistory" name="familyHistory" rows="2" placeholder="Information about family health issues"></textarea>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <h2>Presenting Complaints</h2>
+            <div class="form-group">
+                <label for="reasonForVisit">Reason for Visit:</label>
+                <input type="text" id="reasonForVisit" name="reasonForVisit">
+            </div>
+            <div class="form-group">
+                <label for="symptoms">Symptoms:</label>
+                <textarea id="symptoms" name="symptoms" rows="2" placeholder="Duration and description of symptoms"></textarea>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <h2>Administrative Information</h2>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="patientId">Patient ID:</label>
+                    <input type="text" id="patientId" name="patientId">
+                </div>
+                <div class="form-group">
+                    <label for="referralInfo">Referral Information:</label>
+                    <input type="text" id="referralInfo" name="referralInfo" placeholder="Referring doctor or facility">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="appointmentDate">Appointment Date and Time:</label>
+                    <input type="datetime-local" id="appointmentDate" name="appointmentDate">
+                </div>
+                <div class="form-group">
+                    <label for="paymentMode">Payment Mode:</label>
+                    <select id="paymentMode" name="paymentMode">
+                        <option value="">Select</option>
+                        <option value="cash">Cash</option>
+                        <option value="insurance">Insurance</option>
+                        <option value="socialSecurity">Social Security</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <h2>Consent and Signature</h2>
+            <p>I hereby consent to medical treatment and acknowledge that I have been informed about how my personal data will be used and protected by the clinic.</p>
+            <div class="form-group">
+                <label for="signature">Patient/Guardian Signature:</label>
+                <div class="signature-box"></div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="signatureDate">Date:</label>
+                    <input type="date" id="signatureDate" name="signatureDate">
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
